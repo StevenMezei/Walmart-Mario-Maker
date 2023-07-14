@@ -1,0 +1,135 @@
+Player player: {
+    speed: 1
+    health: 4
+}
+Enemy Slime: {
+    Behaviour: STILL
+    Speed: 2
+    colour: #32a84e
+    image: https://upload.wikimedia.org/wikipedia/en/9/9d/Slime_%28Dragon_Quest%29.png
+}
+
+Enemy Goblin: {
+    Behaviour: FOLLOW
+    Speed: 0.4
+    colour: #042b2b
+    image: https://cdn.discordapp.com/attachments/689196141396361273/1031307942244397126/unknown.png
+}
+
+Terrain terrainType1: {
+    image: none
+    colour: #57f542
+}
+
+Platform platformType1: {
+    image: none
+    colour: #5932a8
+}
+
+Door doorType1: {
+    image: https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/33142/door-clipart-md.png
+    key: none
+}
+
+Door doorType2: {
+    image: https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/33142/door-clipart-md.png
+    key: buttonType1
+}
+
+Coin coinType1: {
+    image: https://cdn.discordapp.com/attachments/689196141396361273/1031309490886291536/unknown.png
+    value: 1
+}
+
+Button buttonType1: {
+    image: https://media.discordapp.net/attachments/1017526051989106740/1027763213896515615/key-png-11.png
+}
+
+Level level1 {
+    player: (200, 50)
+    height: 900
+    width: 3000
+    background: https://cdn.mos.cms.futurecdn.net/ifJPbUm9XMsQdt7AQAets.jpg
+    Terrain: 
+        terrainType1: [
+            (terrain1, 1500, 300, 500), 
+            (terrain2, 0,0, 500),
+            (terrain3, 1000,0, 2000)
+            ]
+    Platform:
+        platformType1: [
+            (plat1, 1000,300,500),
+            (plat2, 500,200,500),
+            (plat3, 2000,300,500)
+        ]
+    Enemy: 
+        Slime: [
+            (slime1, 2500, 50)
+        ]
+        Goblin: [
+            (Goblin1, 1500, 50) 
+        ]
+    Door: 
+        doorType1: [
+            (door1, level2, door2, 2000, 50)
+        ]
+    Button:
+        buttonType1: [
+            (button1, 100,100)
+        ]
+    Coin: 
+        coinType1: [
+            (c1, 1200,500),
+            (c2, 700, 400),
+            (c3, 400, 300)
+        ]
+    Checks: [
+      IF: (money > 1) {
+            Door: Add (d1spawn, doorType1, 100, 90, level2, door2)
+            Enemy: Add (gspawn1 , Goblin, 10, 110)
+        }
+    ]
+}
+
+Level level2 {
+    player: (500, 250)
+    height: 900
+    width: 2000
+    background: https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg
+    Terrain: 
+        terrainType1: [
+            (terrain1, 1500, 300, 500), 
+            (terrain2, 0,0, 500),
+            (terrain3, 1000,0, 2000)
+            ]
+    Platform:
+        platformType1: [
+            (plat4, 900,300,400),
+            (plat5, 500,200,400),
+            (plat6, 1700,500,100),
+            (plat7, 1300,650,100),
+            (plat8, 750,800,200)
+        ]
+    Enemy: 
+        Goblin: [
+            (Goblin1, 1800, 350) 
+        ]
+    Door: 
+        doorType1: [
+            (door2, level1, door1, 200, 50)
+        ]
+        doorType2: [
+            (door3, win, win, 1550, 50)
+        ]
+    Button:
+        buttonType1: [
+            (red1, 750,850)
+        ]
+    Coin: 
+        coinType1: [
+            (c1, 1200,500),
+            (c2, 700, 400)
+        ]
+    Checks: [
+   ]
+}

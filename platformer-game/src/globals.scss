@@ -1,0 +1,209 @@
+html, body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+}
+
+.startContainer {
+  background-image: url("data/whatamidoingwithmylife.png");
+  background-position: center;
+  color: aliceblue;
+  background-size: contain;
+  height: 100vh;
+  width: 100vw;
+}
+
+.preGameText {
+  background-color: rgba(0,0,0,0.8);
+  padding: 2%;
+  width: fit-content;
+  margin: auto;
+  border-radius: 25px;
+  border: 2px solid #000;
+}
+
+.startScreen {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.stage {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+}
+
+.character {
+  position: absolute;
+  display: block;
+  height: 100px;
+  width: 100px;
+  bottom: 0;
+  left: 0;
+  background:url('https://media.discordapp.net/attachments/1019466411044765716/1024926081033195561/owi.png') no-repeat;
+  background-size: contain;
+  z-index: 10;
+}
+
+.normal {
+  background:url('https://media.discordapp.net/attachments/1019466411044765716/1024926081033195561/owi.png') no-repeat;
+  background-size: contain;
+}
+
+.damaged {
+  background: url("https://media.discordapp.net/attachments/1017526051989106740/1029539659396685834/damage.png") no-repeat;
+  background-size: contain;
+  animation: flicker 0.5s infinite;
+}
+
+@keyframes flicker 
+{
+    0%   {opacity:0;}
+    50%   {opacity:0.5;}
+    100% {opacity:0;}
+}
+
+.door {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  background-color: brown;
+}
+
+.button{
+  position: absolute;
+  display: block;
+  height: 50px;
+  width: 50px;
+  bottom: 0;
+  left: 0;
+  background-color: orange;
+}
+
+.coin{
+  position: absolute;
+  display: block;
+  height: 30px;
+  width: 30px;
+  bottom: 0;
+  left: 0;
+  background-color: yellow;
+}
+
+.enemy {
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 80px;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    z-index: 5;
+}
+
+.platform {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+}
+
+.terrain {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+}
+
+.coinCounter {
+  position: relative;
+  left: 2%;
+  top: 2%;
+  font-family: 'Segoe UI Emoji';
+  font-size: 30px;
+  font-weight: bold;
+  color: #dba102;
+  text-shadow: -1px -1px 0 hwb(19 7% 51% / 0.5), 1px -1px 0 hwb(19 7% 51% / 0.5), -1px 1px 0 hwb(19 7% 51% / 0.5), 1px 1px 0 hwb(19 7% 51% / 0.5);
+}
+
+.healthCounter {
+  position: relative;
+  left: 2%;
+  top: 3%;
+  font-family: 'Segoe UI Emoji';
+  font-size: 30px;
+  font-weight: bold;
+  color:crimson;
+  text-shadow: -1px -1px 0 hwb(19 7% 51% / 0.5), 1px -1px 0 hwb(19 7% 51% / 0.5), -1px 1px 0 hwb(19 7% 51% / 0.5), 1px 1px 0 hwb(19 7% 51% / 0.5);
+}
+
+.heart {
+  float: left;
+  margin: 8px 10px 5px 5px;
+  height: 30px;
+  width: 30px;
+  background-image: url("https://www.freeiconspng.com/uploads/heart-png-15.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.introText {
+  text-align: center;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
+}
+
+.errorText {
+  margin-top: 1%;
+  text-align: center;
+  font-family: 'Comic Sans MS';
+  font-size: 20px;
+  color: rgb(255, 87, 87);
+  font-weight: bold;
+  white-space: pre-wrap;
+}
+
+.startButtonContainer {
+  margin-top: 1%;
+  text-align: center;
+}
+
+
+.startButton {
+  font-family: 'Comic Sans MS';
+  margin-top: 1%;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: LightBlue;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  padding: 3px 5px;
+}
+
+
+
+.startButtonFileUploader {
+  display: none;
+}
+
+.startFileSpan {
+  font-family: 'Comic Sans MS';
+  background-color: lightblue;
+  font-size: 20px;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  padding: 3px 5px;
+}

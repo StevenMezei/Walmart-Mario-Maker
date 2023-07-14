@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "antlr4ts": "^0.5.0-alpha.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "antlr4ts-cli": "^0.5.0-alpha.4"
+  },
+  "scripts": {
+    "antlr4ts": "antlr4ts -visitor src/parser/PlatformerParser.g4",
+    "build": "tsc --build",
+    "start": "node src/controller/App.js",
+    "antlr4tsLex": "antlr4ts -visitor src/parser/PlatformerLexer.g4"
+  }
+}
